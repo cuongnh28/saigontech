@@ -1,4 +1,4 @@
-package com.example.saigontech;
+package com.example.saigontech.entites;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;

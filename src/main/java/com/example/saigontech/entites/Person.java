@@ -1,4 +1,4 @@
-package com.example.saigontech;
+package com.example.saigontech.entites;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -10,6 +10,7 @@ import lombok.experimental.FieldDefaults;
 @Table(name = "PERSONS")
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Inheritance(strategy = InheritanceType.JOINED)
 @Data
 public class Person {
     @Id

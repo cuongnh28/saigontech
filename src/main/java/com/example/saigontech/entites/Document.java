@@ -1,4 +1,4 @@
-package com.example.saigontech;
+package com.example.saigontech.entites;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -6,13 +6,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
-import java.util.Date;
-
 @Entity
 @Table(name = "DOCUMENTS")
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @Data
+@DiscriminatorColumn(name = "DOC_TYPE", discriminatorType = DiscriminatorType.STRING)
 public class Document {
     @Id
     @GeneratedValue
@@ -24,18 +24,4 @@ public class Document {
 
     @Column(name = "AUTHOR_NAME")
     String authorName;
-
-    @Column(name = "BEGIN")
-    Date begin;
-
-    @Column(name = "FINISH")
-    Date endDate;
-
-    @Column(name = "PAY_DATE")
-    Date paymentDate;
-
-    @Column(name = "DOC_TYPE")
-    @Enumerated(EnumType.STRING)
-    DocType docType;
-
 }

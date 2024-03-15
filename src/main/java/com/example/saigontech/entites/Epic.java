@@ -1,5 +1,6 @@
-package com.example.saigontech;
+package com.example.saigontech.entites;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
@@ -8,9 +9,13 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
 @Entity
-@Table(name = "INVOICES")
+@Table(name = "EPICS")
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Data
-public class Invoice {
+public class Epic extends Task {
+    @Column(name = "PROJECT_ID")
+    String projectId;
+    @Column(name = "PRODUCT_OWNER_NAME")
+    String productOwner;
 }

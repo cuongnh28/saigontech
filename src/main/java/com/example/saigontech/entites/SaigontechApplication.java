@@ -1,4 +1,4 @@
-package com.example.saigontech;
+package com.example.saigontech.entites;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
